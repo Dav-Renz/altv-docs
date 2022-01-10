@@ -1,0 +1,78 @@
+.release-stage {
+  /*display: inline-block;*/
+  padding: 0.25em;
+  margin-bottom: 0.25em;
+  vertical-align: middle;
+  font-size: 10px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border-radius: 0.25em;
+  background-color: #808080;
+}
+
+.release-stage.alpha {
+  background-color: #055DC5;
+}
+.release-stage.alpha::before {
+  content: "alpha";
+}
+
+.release-stage.beta {
+  background-color: #E26E2D;
+}
+.release-stage.beta::before {
+  content: "beta";
+}
+
+.release-stage.public {
+  background-color: #008736;
+}
+.release-stage.public::before {
+  content: "public";
+}
+
+.release-stage.alpha::before {
+  content: "dev" !important;
+}
+
+.release-stage.beta::before {
+  content: "rc" !important;
+}
+
+.release-stage.public::before {
+  content: "release" !important;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+}
+
+.grid-container .grid-item {
+  width: 200px;
+  padding: 6px;
+  font-size: 14px;
+  word-wrap: break-word;
+  border: 1px solid #202225;
+}
+
+.grid-container .grid-item .grid-item-img {
+  height: 150px;
+  margin-bottom: 5px;
+}
+
+.grid-item-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px) {
+  .grid-container {
+    justify-content: center;
+    grid-template-columns: unset !important;
+  }
+}
